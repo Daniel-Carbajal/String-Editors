@@ -19,7 +19,7 @@ public class L_StringEditor {
 		this.first= null;	// needed so that the cursor can be at the front of the list
 		}
 	
-	//adds a new character at the cursor position
+	// Adds a new character at the cursor position
 	public void insert(char c) {
 		Node newChar = new Node();
 		newChar.c = c; // new node that will get inserted with the new character
@@ -44,7 +44,8 @@ public class L_StringEditor {
 			cursorPos = cursorPos.next;
 		}
 	}
-	
+
+	// Moves the cursor position to the right
 	public void moveForward() {
 		if(cursorPos == null && first == null) { //if the list is empty do nothing
 			return;
@@ -56,7 +57,8 @@ public class L_StringEditor {
 			cursorPos = cursorPos.next;
 		}
 	}
-	
+
+	// Moves the cursor position to the left
 	public void moveBackward() {
 		if(cursorPos == null) { //if the cursor is at the beginning of the string it will not move
 			return;
@@ -64,7 +66,8 @@ public class L_StringEditor {
 			cursorPos = cursorPos.prev;
 		}
 	}
-	
+
+	// Deletes the character to the right of the cursor
 	public void delete() {
 		if(cursorPos == null && first != null) { // if the cursor is at the beginning of the string and there are character(s) in front of it
 			if(first.next == null) { //if there is only one character in the string, delete it
@@ -85,7 +88,8 @@ public class L_StringEditor {
 			cursorPos.next.prev = cursorPos;
 		}
 	}
-	
+
+	// Deletes the character to the left of cursor
 	public void backspace() {
 		if(cursorPos == null) { // if the cursor is at the beginning of the string do nothing
 			return;
@@ -104,7 +108,8 @@ public class L_StringEditor {
 		
 		
 	}
-	
+
+	// Returns the string of characters to the left of the cursor
 	public String lettersBeforeCursor(int count) {
 		Node current = new Node();
 		current = cursorPos;
@@ -119,7 +124,8 @@ public class L_StringEditor {
 		
 		return result;
 	}
-	
+
+	// Returns the string of characters to the right of the cursor
 	public String lettersAfterCursor(int count) {
 		Node current = new Node();
 		current = cursorPos;
