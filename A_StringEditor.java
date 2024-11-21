@@ -16,7 +16,7 @@ public class A_StringEditor {
 		data = (char[]) new char[INITIAL_CAPACITY];
 	}
 	
-
+	// Inserts a character at the current cursor position
 	public void insert(char c) {
 		//long start = System.currentTimeMillis();
 		if(stringSize == data.length-1) { // if the array is full than expand the length by 10 indexes
@@ -45,7 +45,8 @@ public class A_StringEditor {
 		//System.out.println("time: " + (finish - start) / 1000.0);
 
 	}
-	
+
+	// Moves the cursor position to the right
 	public void moveForward() {
 		if(cursorPos == stringSize) { // if the cursor is at the end of the string do nothing
 			return;
@@ -53,7 +54,8 @@ public class A_StringEditor {
 			cursorPos++;
 		}
 	}
-	
+
+	// Moves the cursor position to the left
 	public void moveBackward() {
 		if(cursorPos == 0) { //if the cursor is at the front of the string, do nothing
 			return;
@@ -61,7 +63,8 @@ public class A_StringEditor {
 			cursorPos--;
 		}
 	}
-	
+
+	// Deletes the character to the right of the cursor
 	public void delete() {
 		if(cursorPos == stringSize) { // if the cursor is at the end of the string, do nothing
 			return;
@@ -76,7 +79,8 @@ public class A_StringEditor {
 		
 		stringSize--; // the string has one less character
 	}
-	
+
+	// Deletes the character to the left of the cursor
 	public void backspace() {
 		if(cursorPos == 0) { //if the cursor is at the front of the string, do nothing
 			return;
@@ -92,7 +96,8 @@ public class A_StringEditor {
 		
 		stringSize--; // the string has one less character
 	}
-	
+
+	// Returns the string of characters to the left of the cursor position
 	public String lettersBeforeCursor(int count) {
 		String result = "";
 		
@@ -114,7 +119,8 @@ public class A_StringEditor {
 		}
 		return result;
 	}
-	
+
+	// Returns the string of characters to the right of the cursor position
 	public String lettersAfterCursor(int count) {
 		String result = "";
 		int i = cursorPos + 1;
