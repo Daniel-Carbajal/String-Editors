@@ -1,4 +1,4 @@
-package editor;
+package editor; 
 
 import java.awt.Font;
 import java.awt.event.KeyEvent;
@@ -6,10 +6,10 @@ import javax.swing.JFrame;
 
 import edu.princeton.cs.algs4.Draw;
 import edu.princeton.cs.algs4.DrawListener;
-
+// This program is not coded by me. This was provided by my professor to test either String Editors.
 public class GUI implements DrawListener {
 	private Draw draw;
-	private A_StringEditor ed;
+	private A_StringEditor ed; 
 	// private L_StringEditor ed;
 
 	public GUI() {
